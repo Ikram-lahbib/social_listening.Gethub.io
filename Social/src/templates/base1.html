@@ -1,0 +1,59 @@
+
+{% load static %}
+<!doctype html>
+<html>
+ <head>
+  <meta charset="utf-8">
+   <title>Index</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <link rel="stylesheet" href="{% static 'home-static/css/style.css' %}">
+  	  <link rel="stylesheet" href="{% static 'home-static/css/header.css' %}">
+
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <link rel="stylesheet" href="{% static 'home-static/css/base_style.css' %}">
+
+
+      <link rel="stylesheet" href="{% static 'home-static/font/css/all.css' %}">
+      <script src="{% static 'home-static/js/slider.js' %}" defer></script>
+
+
+ </head>
+
+ <body>
+  <header>
+		<div class="container">
+			<div class="logo">
+			 <img src="{% static 'home-static/img/Blogmeter_Social-listening_Logo_1024.png' %}">
+			</div>
+			<div class="menu">
+			 <ul>
+					<li><a href="{% url 'Search:logout' %}"><button>Logout</button></a></li>
+					<li><a href="#"><i class="fas fa-user-circle"></i></a></li>
+					<li><a href="#"><i class="fas fa-question-circle"></i></a></li>
+			 </ul>
+			</div>
+		</div>
+	</header>
+
+  <main>
+
+
+    <div class="mymessage_dev"> <!-- for messages add poroject successfully -->
+      {% if messages %}
+        <ul class="mymassages">
+          {% for message in messages %}
+           <li{% if message.tags %} class="{{ message.tags}}"{% endif %}>{{ message}}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+     </div>
+
+    {% block body %}
+
+    {% endblock body %}
+	 </main>
+  </body>
+ </html>

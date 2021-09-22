@@ -1,0 +1,39 @@
+{% extends "base1.html" %}
+
+
+{% block body %}
+
+    <div class="precedent">
+   	 <a href="#" class="btnp"><i class="">Hello , {{request.user}} </i></a>
+    </div>
+
+
+		<div class="jumbotron mybanner">
+			<a class="btn btn-primary btn-lg" href="{% url 'Search:Create_post' %}" role="button">Add new project</a>
+		</div>
+
+		<nav class="navbar navbar-light bg-light"> <!-- for search  project-->
+     <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search Your Project" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+     </form>
+    </nav><br>
+
+
+
+{% for post in All_posts %}
+  <div class="card single_post">
+		<div class="card-body">
+			<h5 class="card-title">{{post.project_name}}</h5>
+			<a href="{% url 'Search:Post' post.id %}" class="btn btn-primary">Know More</a>
+			<a href="{% url 'Search:Edit_post' post.id %}" class="btn btn-primary" style="float: right;">Edit</a>&nbsp;&nbsp;&nbsp;
+      	<a href="{% url 'Search:Delete_post' post.id %}" class="btn btn-primary" style="float: right;">Delete</a>
+
+		 </div>
+		  <div class="card-footer">
+       <small class="text-muted">Created {{post.created}}</small>
+      </div>
+		</div>
+{% endfor %}
+
+{% endblock body %}

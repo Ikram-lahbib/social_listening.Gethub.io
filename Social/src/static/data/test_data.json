@@ -1,0 +1,32 @@
+{
+  "content": [{
+                "channel_name"  : "",
+                "channels_loyal": "",
+                "title"         : "",
+                "date"          : "",
+                "reaction"      : {
+                                    "views"    : "",
+                                    "likes"    : "",
+                                    "dis_likes": "",
+                                    "comment"  : ""
+                                   },
+
+                "subtitle"      : "",
+
+                "comments"      : [{
+                                    "channel_name": "",
+                                    "likes"       : "",
+                                    "date"        : "",
+                                    "dis_likes"   : "",
+                                    "text_comment": "",
+                                    "reply"       : [{
+                                                      "channel_name": "",
+                                                      "likes"       : "",
+                                                      "dis_likes"   : "",
+                                                      "text_comment": ""
+                                                      }]
+
+                                    }]
+
+              }]
+}

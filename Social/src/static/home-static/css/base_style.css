@@ -1,0 +1,16 @@
+.mybanner{
+width: 100%
+}
+.mymessage_dev{
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+}
+.mymassages{
+  background-color: #2e2e2e;
+  color: white;
+  list-style-type: none;
+}
+.mymessages li{
+  padding: 15px;
+}

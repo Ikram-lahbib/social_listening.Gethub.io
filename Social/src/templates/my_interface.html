@@ -1,0 +1,117 @@
+
+{% load static %}
+<!doctype html>
+<html>
+ <head>
+  <meta charset="utf-8">
+   <title>Index</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <link rel="stylesheet" href="{% static 'home-static/css/style.css' %}">
+  	  <link rel="stylesheet" href="{% static 'home-static/css/header.css' %}">
+
+      <link rel="stylesheet" href="{% static 'home-static/font/css/all.css' %}">
+      <script src="{% static 'home-static/js/slider.js' %}" defer></script>
+ </head>
+
+ <body>
+  <header>
+		<div class="container">
+			<div class="logo">
+			 <img src="{% static 'home-static/img/Blogmeter_Social-listening_Logo_1024.png' %}">
+			</div>
+			<div class="menu">
+			 <ul>
+					<li><a href="#"><button>Logout</button></a></li>
+					<li><a href="#"><i class="fas fa-user-circle"></i></a></li>
+					<li><a href="#"><i class="fas fa-question-circle"></i></a></li>
+			 </ul>
+			</div>
+		</div>
+	</header>
+
+  <main>
+	  <div class="precedent">
+	    <a href="#" class="btnp"><i class="fas fa-hand-point-left"></i>Precedent</a>
+	  </div>
+	  <div class="content">
+		  <ul>
+			  <li><button class="btnprocess" data-popup-ref="monPopup"><i class="fas fa-upload"></i>Import</button></li>
+			  <li><button class="btnprocess" data-popup-ref="monPopup1"><i class="fas fa-hand-sparkles"></i>Preprocess</button></li>
+			  <li><button class="btnprocess"><i class="fas fa-cogs"></i>Analyses</button></li>
+			  <li><button class="btnprocess"><i class="fas fa-chart-line"></i>visualisation</button></li>
+		  </ul>
+      <div class="">
+
+
+        <img src="{{circle}}" alt="">
+        <img src="{{plot}}" alt="">
+
+      </div>
+
+      <!-- ---------------------------------------------------------------------------------------------------------------- -->
+		  <div class="popup" data-popup-id="monPopup">
+			  <div class="popubcontant">
+				  <div class="popupcontainer">
+					  <div class="popupheader">
+						  <div class ="titel">
+							  <h2>Import Data For Your Project</h2>
+							  <span class="btn-close" data-dismiss-popup> <i class="fas fa-times"></i> </span>
+						  </div>
+						  <!-- p>Select One Of Chanel To Import Data From</p -->
+					  </div>
+             <br>
+             <!---form class=""  method="post"-->
+
+               <input type="Image" src="{% static 'home-static/img/social.png' %}" data-popup-ref="monPopup1" />
+               <!--img src="{% static 'home-static/img/social.png' %}" alt=""-->
+
+               <input type="Image" src="{% static 'home-static/img/import.png' %}" data-popup-ref="social" />
+
+
+                <!--/form-->
+
+				   </div>
+			  </div>
+		  </div>
+      <!-- ---------------------------------------------------------------------------------------------------------------- -->
+      <div class="popup1" data-popup-id="monPopup1">
+			 <div class="popubcontant">
+			    <div class="popupcontainer1">
+				     <div class="popupheader1">
+					  	 <div class ="titel1">
+							   <h1>Import Data From Social Media</h1>
+							   <span class="btn-close" data-dismiss-popup> <i class="fas fa-times"></i> </span>
+						   </div>
+						   <p>Set criteria that you want your posts to match.</p>
+					   </div>
+					   <form action="#" method="post" class="popupmain1">
+						   <h3>Find posts with ...</h3>
+						   <label>
+							   All this words/hashtag
+							   <input type="text" name="word" placeholder="java or #java">
+						   </label>
+						   <label >
+							   Language
+							   <input type="text" placeholder="en or fr or ar">
+							</label>
+						  <label >
+							   Posted After
+							   <input type="date" placeholder="2021-01-12">
+						  </label>
+						  <label >
+							   Posted Pefore
+							   <input type="date" placeholder="2021-02-12">
+						  </label>
+						   <button>Find Posts</button>
+					 </form>
+
+				</div>
+
+			</div>
+		</div>
+
+      <!-- ---------------------------------------------------------------------------------------------------------------- -->
+	  </div>
+	 </main>
+  </body>
+ </html>

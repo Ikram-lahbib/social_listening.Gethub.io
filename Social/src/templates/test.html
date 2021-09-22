@@ -1,0 +1,19 @@
+<!-- for detail --->
+{% block body %}
+
+<div class="jumbotron banner">
+  <a class="btn btn-primary btn-lg" href="{% url 'Search:Edit_post' Post.id %}" role="button">Edit This Project</a>
+</div>
+
+    <div class="card single_post">
+		  <div class="card-body">
+			<h5 class="card-title">{{Post.project_name}}</h5>
+
+       <a class="btn btn-primary btn-lg" href="{% url 'Search:Scraping' 1 %}" role="button">Importing Data From Social Media</a>
+       <a class="btn btn-primary btn-lg" href="{% url 'Search:Importing_data' Post.id %}" role="button">Importing Data From Existing Data</a>
+
+		  </div>
+		</div >
+
+{% endblock body %}
+<!---------------------------------------------------------------------------------------- -->

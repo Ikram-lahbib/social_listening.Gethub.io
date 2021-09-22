@@ -1,0 +1,134 @@
+{% extends "base1.html" %}
+{% load static %}
+
+{% block body %}
+
+   <div class="precedent">
+     <a href="{% url 'Search:All_posts' %}" class="btnp"><i class="fas fa-hand-point-left"></i>Precedent</a>
+   </div>
+
+
+    <div class="content">
+      <ul>
+        <li><button class="btnprocess" data-popup-ref="monPopup"><i class="fas fa-upload"></i>Import</button></li>
+        <li><button class="btnprocess" data-popup-ref="monPopup1"><i class="fas fa-hand-sparkles"></i>Preprocess</button></li>
+        <li><button class="btnprocess"><i class="fas fa-cogs"></i>Analyses</button></li>
+        <li><button class="btnprocess"><i class="fas fa-chart-line"></i>visualisation</button></li>
+      </ul>
+      <!-- for visualisation -->
+      <!--div class="">
+
+
+        <img src="{{circle}}" alt="">
+        <img src="{{plot}}" alt="">
+        <img src="{{tableau}}" alt="">
+
+
+      </div -->
+
+      <!-- ---------------------------------------------------------------------------------------------------------------- -->
+      <div class="popup" data-popup-id="monPopup">
+        <div class="popubcontant">
+          <div class="popupcontainer">
+            <div class="popupheader">
+              <div class ="titel">
+                <h2>Import Data For Your Project</h2>
+                <span class="btn-close" data-dismiss-popup> <i class="fas fa-times"></i> </span>
+              </div>
+              <!-- p>Select One Of Chanel To Import Data From</p -->
+            </div>
+             <br>
+             <!---form class=""  method="post"-->
+
+               <input type="Image" src="{% static 'home-static/img/social.png' %}" data-popup-ref="monPopup1" />
+               <!--img src="{% static 'home-static/img/social.png' %}" alt=""-->
+
+               <input type="Image" src="{% static 'home-static/img/import.png' %}" data-popup-ref="social" />
+
+
+                <!--/form-->
+
+           </div>
+        </div>
+      </div>
+
+      <!-- ---------------------------------------------------------------------------------------------------------------- -->
+      <div class="popup1" data-popup-id="monPopup1">
+       <div class="popubcontant">
+          <div class="popupcontainer1">
+             <div class="popupheader1">
+               <div class ="titel1">
+                 <h2>Import Data From Social Media</h2>
+                 <span class="btn-close" data-dismiss-popup> <i class="fas fa-times"></i> </span>
+               </div>
+               <p>Set criteria that you want your posts to match.</p>
+             </div>
+             <form action="{% url 'Search:Scraping' Post.id %}" method="post" class="popupmain1">
+               {% csrf_token %}
+
+               <div>
+                <h3>Select One Of Chanel To Import Data From</h3>&nbsp;&nbsp;&nbsp;&nbsp;
+                 <input type="checkbox" name="youtube" value="youtube">
+                  <i class="fab fa-youtube"></i>
+                    Youtube  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&emsp;&emsp;
+
+                  <input type="checkbox" name="twitter" value="twitter" checked>
+                  <i class="fab fa-twitter"></i>
+                    Twitter
+               </div>
+
+
+               <h3>Find posts with ...</h3>
+               <! --------------------- >
+               <div>
+                 &nbsp;&nbsp;&nbsp;&nbsp;
+                 <input type="checkbox" name="Movie" value="Movie"checked>
+                  <i class=""></i>
+                    Movie  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&emsp;&emsp;
+
+                  <input type="checkbox" name="Game" value="Game" >
+                  <i class=""></i>
+                    Game
+               </div>
+               <! --------------------- >
+               <label>
+                 All this words/hashtag
+                 <input type="text" name="text_search" placeholder="Games or Movies or Sports events" required>
+               </label>
+               <label >
+                 Language
+                 <input type="text" placeholder="en or fr or ar">
+              </label>
+              <label >
+                 Posted After
+                 <input type="date" name="date1" placeholder="2021-01-12" required>
+              </label>
+              <label >
+                 Posted Pefore
+                 <input type="date" name="date2" placeholder="2021-02-12" required>
+              </label>
+               <button type="submit">Find Posts</button>
+           </form>
+
+        </div>
+
+      </div>
+    </div>
+
+      <!-- ---------------------------------------------------------------------------------------------------------------- -->
+      <div class=".myimg-container" >
+
+
+        <img src="{{circle}}" alt="">
+        <img src="{{plot1}}" alt="">
+        <img src="{{plot2}}" alt="">
+        <img src="{{plot3}}" alt="">
+        <img src="{{tableau}}" alt="">
+
+
+      </div>
+
+    </div>
+
+
+{% endblock body %}

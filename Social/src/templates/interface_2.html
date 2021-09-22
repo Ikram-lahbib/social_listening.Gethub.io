@@ -1,0 +1,81 @@
+
+{% load static %}
+<!doctype html>
+<html>
+ <head>
+  <meta charset="utf-8">
+   <title>Index</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <link rel="stylesheet" href="{% static 'home-static/css/style.css' %}">
+  	  <link rel="stylesheet" href="{% static 'home-static/css/header.css' %}">
+
+      <link rel="stylesheet" href="{% static 'home-static/font/css/all.css' %}">
+      <script src="{% static 'home-static/js/slider.js' %}" defer></script>
+ </head>
+
+ <body>
+  <header>
+		<div class="container">
+			<div class="logo">
+			 <img src="{% static 'home-static/img/Blogmeter_Social-listening_Logo_1024.png' %}">
+			</div>
+			<div class="menu">
+			 <ul>
+					<li><a href="#"><button>Logout</button></a></li>
+					<li><a href="#"><i class="fas fa-user-circle"></i></a></li>
+					<li><a href="#"><i class="fas fa-question-circle"></i></a></li>
+			 </ul>
+			</div>
+		</div>
+	</header>
+
+  <main>
+	  <div class="precedent">
+	    <a href="#" class="btnp"><i class="fas fa-hand-point-left"></i>Precedent</a>
+	  </div>
+	  <div class="content">
+		  <ul>
+			  <li><button class="btnprocess" data-popup-ref="monPopup"><i class="fas fa-upload"></i>Import</button></li>
+			  <li><button class="btnprocess"><i class="fas fa-hand-sparkles"></i>Preprocess</button></li>
+			  <li><button class="btnprocess"><i class="fas fa-cogs"></i>Analyses</button></li>
+			  <li><button class="btnprocess"><i class="fas fa-chart-line"></i>visualisation</button></li>
+		  </ul>
+
+      <!-- ---------------------------------------------------------------------------------------------------------------- -->
+		  <div class="popup" data-popup-id="monPopup">
+			  <div class="popubcontant">
+				  <div class="popupcontainer">
+					  <div class="popupheader">
+						  <div class ="titel">
+							  <h1>Import Data From Social Media</h1>
+							  <span class="btn-close" data-dismiss-popup> <i class="fas fa-times"></i> </span>
+						  </div>
+						  <p>Select One Of Chanel To Import Data From</p>
+					  </div>
+					    <form class="popupmain" action="#" method="post">
+							  <h3>Chanel</h3>
+							  <div class="source">
+								  <label>
+								    <input type="checkbox" name="source" value="twitter">
+									   <i class="fab fa-twitter"></i>
+									     Twitter
+
+								  </label>
+								  <label>
+									  <input type="checkbox" name="source" value="youtube">
+									   <i class="fab fa-youtube"></i>
+									     Youtube
+								  </label>
+							  </div>
+
+						    <button>Select Source</button>
+
+					    </form>
+				   </div>
+			  </div>
+		  </div>
+      <!-- ---------------------------------------------------------------------------------------------------------------- -->
+	  </div>
+	 </main>
+  </body>
+ </html>
